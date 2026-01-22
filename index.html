@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush Bisht | AI/ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        primary: '#38bdf8', // Light blue
+                        secondary: '#818cf8', // Indigo
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: move 10s infinite alternate;
+        }
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(20px, -20px) scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        Aayush Bisht
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#experience" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#projects" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#skills" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#contact" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="blob bg-primary w-64 h-64 rounded-full top-1/4 left-1/4"></div>
+        <div class="blob bg-secondary w-64 h-64 rounded-full bottom-1/4 right-1/4 animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-primary font-semibold tracking-wide uppercase mb-4 animate-fade-in-up">AI/ML Engineer & Data Scientist</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Aayush Bisht</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400 mb-8">
+                Pursuing MSc in Artificial Intelligence at CentraleSupélec. <br>
+                Building trustworthy AI systems and decoding the future of machine learning.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#projects" class="bg-primary hover:bg-sky-500 text-slate-900 font-bold py-3 px-8 rounded-full transition transform hover:scale-105">
+                    View Work
+                </a>
+                <a href="#contact" class="border border-slate-600 hover:border-slate-400 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105">
+                    Contact Me
+                </a>
+            </div>
+            
+            <div class="mt-12 flex justify-center space-x-6 text-2xl text-slate-400">
+                <a href="https://github.com/bishtty" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/aayush-bisht" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://bishtaayush.medium.com/" target="_blank" class="hover:text-white transition"><i class="fab fa-medium"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Experience Section -->
+    <section id="experience" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Experience & Education</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary mr-3"></i> Education
+                    </h3>
+                    <div class="space-y-8 border-l-2 border-slate-800 pl-8 ml-3 relative">
+                        <!-- Item 1 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-slate-900 bg-primary"></span>
+                            <h4 class="text-xl font-bold text-white">MSc in Artificial Intelligence</h4>
+                            <p class="text-secondary">CentraleSupélec, Paris-Saclay</p>
+                            <p class="text-sm text-slate-500 mb-2">Sep 2025 - Present</p>
+                            <p class="text-slate-400">Machine Learning, Deep Learning, Reinforcement Learning, Optimization, NLP, Medical Imaging.</p>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-slate-900 bg-slate-600"></span>
+                            <h4 class="text-xl font-bold text-white">Bachelor of Technology, IT</h4>
+                            <p class="text-secondary">Graphic Era University, India</p>
+                            <p class="text-sm text-slate-500 mb-2">2015 - 2019</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-briefcase text-primary mr-3"></i> Professional Experience
+                    </h3>
+                    <div class="space-y-8 border-l-2 border-slate-800 pl-8 ml-3 relative">
+                        <!-- Item 1 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-slate-900 bg-primary"></span>
+                            <h4 class="text-xl font-bold text-white">Cybersecurity Analyst (OSINT)</h4>
+                            <p class="text-secondary">Cybercell, Kota</p>
+                            <p class="text-sm text-slate-500 mb-2">Aug 2023 - Oct 2024</p>
+                            <ul class="list-disc list-outside ml-4 text-slate-400 space-y-1">
+                                <li>Engineered automated Python scripts to filter threat data streams, reducing triage time by 30%.</li>
+                                <li>Conducted multimodal OSINT analysis to trace digital footprints.</li>
+                                <li>Collaborated with law enforcement on technical data logs.</li>
+                            </ul>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-slate-900 bg-slate-600"></span>
+                            <h4 class="text-xl font-bold text-white">Data Analyst</h4>
+                            <p class="text-secondary">QuantStreet LLP, New Delhi</p>
+                            <p class="text-sm text-slate-500 mb-2">Aug 2019 - Jul 2023</p>
+                            <ul class="list-disc list-outside ml-4 text-slate-400 space-y-1">
+                                <li>Designed pipelines using Pandas and SQL to harmonize financial datasets from 5+ sources.</li>
+                                <li>Mitigated data noise in high-frequency trading datasets.</li>
+                                <li>Generated automated Power BI performance reports.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-network-wired text-4xl text-primary/80 group-hover:text-primary transition"></i>
+                            <a href="https://github.com/bishtty/causal-discovery" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Causal Discovery in Time Series</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Benchmarked algorithms (PCMCI, PCMCI+) on Causal Chamber datasets. Stress-tested robustness using Tigramite to identify reliable methods for intervention-ready AI.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">Tigramite</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">Research</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-lock text-4xl text-secondary/80 group-hover:text-secondary transition"></i>
+                            <a href="https://github.com/bishtty/Decoding-Encoded-Text-Using-a-Hierarchical-Ensemble-of-GRU" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Hierarchical Ensemble Text Decoding</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Developed a hybrid architecture combining a GRU-Seq2Seq model for decryption and a fine-tuned GPT-2 for linguistic refinement. High semantic accuracy reconstruction.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">PyTorch</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">GPT-2</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">NLP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-gamepad text-4xl text-green-400/80 group-hover:text-green-400 transition"></i>
+                            <a href="https://github.com/bishtty/vampire_vs_werewolf" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Game AI: Vampire vs Werewolf</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Built a competitive game agent using Minimax with Alpha-Beta Pruning and Iterative Deepening Search. Optimized heuristics for efficient grid navigation.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Minimax</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Alpha-Beta</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-book-open text-4xl text-pink-400/80 group-hover:text-pink-400 transition"></i>
+                            <a href="https://github.com/bishtty/genAI-Story-Generator-and-Narrator" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">GenAI Story Generator</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            An application that generates and narrates stories using generative AI techniques.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-pink-400">GenAI</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-pink-400">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-video text-4xl text-red-500/80 group-hover:text-red-500 transition"></i>
+                            <a href="https://github.com/bishtty/YETI-YouTube-Education-Transcription-Intelligence" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">YETI</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            YouTube Education Transcription Intelligence. A tool to transcribe and analyze educational content from YouTube videos.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-red-500">Whisper</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-red-500">YouTube API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Technical Skills</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Languages -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                    <h3 class="text-xl font-semibold text-white mb-6 text-center">Languages</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Python</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">SQL</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">C++</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Bash Shell</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                    <h3 class="text-xl font-semibold text-white mb-6 text-center">AI/ML Frameworks</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">PyTorch</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">TensorFlow</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Keras</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Scikit-Learn</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Tigramite</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">HuggingFace</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                    <h3 class="text-xl font-semibold text-white mb-6 text-center">Data & Tools</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Pandas</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">NumPy</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Git</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Docker</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Splunk</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Power BI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-950 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Let's Connect</h2>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://github.com/bishtty" target="_blank" class="text-slate-400 hover:text-white text-3xl transition transform hover:scale-110">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/aayush-bisht" target="_blank" class="text-slate-400 hover:text-[#0077b5] text-3xl transition transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://bishtaayush.medium.com/" target="_blank" class="text-slate-400 hover:text-white text-3xl transition transform hover:scale-110">
+                    <i class="fab fa-medium"></i>
+                </a>
+                <a href="mailto:aayush.bisht@student-cs.fr" class="text-slate-400 hover:text-primary text-3xl transition transform hover:scale-110">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-slate-600 text-sm">
+                &copy; 2026 Aayush Bisht. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
