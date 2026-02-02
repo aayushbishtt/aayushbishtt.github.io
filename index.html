@@ -16,8 +16,8 @@
                             900: '#0f172a',
                             950: '#020617',
                         },
-                        primary: '#38bdf8', // Light blue
-                        secondary: '#818cf8', // Indigo
+                        primary: '#38bdf8',
+                        secondary: '#818cf8',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -28,7 +28,7 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         .blob {
             position: absolute;
             filter: blur(40px);
@@ -89,7 +89,7 @@
                     Contact Me
                 </a>
             </div>
-            
+
             <div class="mt-12 flex justify-center space-x-6 text-2xl text-slate-400">
                 <a href="https://github.com/aayushbishtt" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/aayush-bisht" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
@@ -118,7 +118,7 @@
                             <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-slate-900 bg-primary"></span>
                             <h4 class="text-xl font-bold text-white">MSc in Artificial Intelligence</h4>
                             <p class="text-secondary">CentraleSupélec, Paris-Saclay</p>
-                            <p class="text-sm text-slate-500 mb-2">Sep 2025 - Present</p>
+                            <p class="text-sm text-slate-500 mb-2">Sep 2024 - Present</p>
                             <p class="text-slate-400">Machine Learning, Deep Learning, Reinforcement Learning, Optimization, NLP, Medical Imaging.</p>
                         </div>
                         <!-- Item 2 -->
@@ -176,95 +176,116 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <!-- <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-network-wired text-4xl text-primary/80 group-hover:text-primary transition"></i>
-                            <a href="https://github.com/bishtty/causal-discovery" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Causal Discovery in Time Series</h3>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Benchmarked algorithms (PCMCI, PCMCI+) on Causal Chamber datasets. Stress-tested robustness using Tigramite to identify reliable methods for intervention-ready AI.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">Python</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">Tigramite</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">Research</span>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Project 2 -->
+                <!-- Project 1: Hierarchical GRU Text Decoding -->
                 <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-lock text-4xl text-secondary/80 group-hover:text-secondary transition"></i>
+                            <i class="fas fa-lock text-4xl text-primary/80 group-hover:text-primary transition"></i>
                             <a href="https://github.com/aayushbishtt/Decoding-Encoded-Text-Using-a-Hierarchical-Ensemble-of-GRU" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Hierarchical Ensemble Text Decoding</h3>
                         <p class="text-slate-400 text-sm mb-4">
-                            Developed a hybrid architecture combining a GRU-Seq2Seq model for decryption and a fine-tuned GPT-2 for linguistic refinement. High semantic accuracy reconstruction.
+                            Hybrid architecture combining GRU-Seq2Seq model for decryption and fine-tuned GPT-2 for linguistic refinement with high semantic accuracy.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">PyTorch</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">GPT-2</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">NLP</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">PyTorch</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-primary">NLP</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Project 2: GenAI Story Generator -->
                 <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-gamepad text-4xl text-green-400/80 group-hover:text-green-400 transition"></i>
-                            <a href="https://github.com/aayushbishtt/vampire_vs_werewolf" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Game AI: Vampire vs Werewolf</h3>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Built a competitive game agent using Minimax with Alpha-Beta Pruning and Iterative Deepening Search. Optimized heuristics for efficient grid navigation.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Minimax</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Alpha-Beta</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Python</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-book-open text-4xl text-pink-400/80 group-hover:text-pink-400 transition"></i>
+                            <i class="fas fa-book-open text-4xl text-secondary/80 group-hover:text-secondary transition"></i>
                             <a href="https://github.com/aayushbishtt/genAI-Story-Generator-and-Narrator" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">GenAI Story Generator</h3>
+                        <h3 class="text-xl font-bold text-white mb-2">GenAI Story Generator & Narrator</h3>
                         <p class="text-slate-400 text-sm mb-4">
-                            An application that generates and narrates stories using generative AI techniques.
+                            An application that generates and narrates stories using generative AI techniques with text-to-speech capabilities.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-pink-400">GenAI</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-pink-400">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">GenAI</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-secondary">TTS</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 5 -->
+                <!-- Project 3: Smart Assistant AM Agent -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-robot text-4xl text-green-400/80 group-hover:text-green-400 transition"></i>
+                            <a href="https://github.com/aayushbishtt/Smart-Assistant-AM-Agent" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Smart Assistant AM Agent</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            An intelligent AI agent designed to assist with daily tasks and provide smart automation capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">AI Agent</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-green-400">Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: YETI - YouTube RAG -->
                 <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
                             <i class="fas fa-video text-4xl text-red-500/80 group-hover:text-red-500 transition"></i>
-                            <a href="https://github.com/aayushbishtt/YETI-YouTube-Education-Transcription-Intelligence" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/aayushbishtt/RAG-Agent-YETI-YouTube-Education-Transcription-Intelligence" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">YETI</h3>
+                        <h3 class="text-xl font-bold text-white mb-2">YETI - YouTube RAG Agent</h3>
                         <p class="text-slate-400 text-sm mb-4">
-                            YouTube Education Transcription Intelligence. A tool to transcribe and analyze educational content from YouTube videos.
+                            YouTube Education Transcription Intelligence. RAG-based agent for transcribing and analyzing educational YouTube content.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-red-500">Whisper</span>
-                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-red-500">YouTube API</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-red-500">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-red-500">RAG</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-red-500">LLM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Vampire vs Werewolf -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-gamepad text-4xl text-purple-400/80 group-hover:text-purple-400 transition"></i>
+                            <a href="https://github.com/aayushbishtt/vampire_vs_werewolf" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Game AI: Vampire vs Werewolf</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Competitive game agent using Minimax with Alpha-Beta Pruning and Iterative Deepening Search with optimized heuristics.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-purple-400">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-purple-400">Minimax</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-purple-400">Game AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Sante Hackathon -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-slate-800 hover:border-primary group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-heartbeat text-4xl text-pink-400/80 group-hover:text-pink-400 transition"></i>
+                            <a href="https://github.com/aayushbishtt/santeHackathon" target="_blank" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Sante Hackathon</h3>
+                        <p class="text-slate-400 text-sm mb-4">
+                            Healthcare-focused hackathon project leveraging AI/ML for medical applications and health data analysis.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-pink-400">Python</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-pink-400">Healthcare</span>
+                            <span class="px-2 py-1 bg-slate-800 text-xs rounded text-pink-400">ML</span>
                         </div>
                     </div>
                 </div>
@@ -300,8 +321,8 @@
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">TensorFlow</span>
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Keras</span>
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Scikit-Learn</span>
-                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Tigramite</span>
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">HuggingFace</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">LangChain</span>
                     </div>
                 </div>
 
@@ -313,7 +334,7 @@
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">NumPy</span>
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Git</span>
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Docker</span>
-                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Splunk</span>
+                        <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Streamlit</span>
                         <span class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300 hover:text-primary transition">Power BI</span>
                     </div>
                 </div>
