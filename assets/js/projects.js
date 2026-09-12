@@ -63,6 +63,7 @@ export function initProjects() {
     </button>`
   ).join("");
   const outputCells = outputEl.querySelectorAll(".conv-output-cell");
+  let current = 0;
 
   function highlightKernel(row, col) {
     cellEls.forEach((cell) => {
@@ -74,6 +75,7 @@ export function initProjects() {
   }
 
   function selectProject(index) {
+    current = index;
     const project = PROJECTS[index];
     outputCells.forEach((cell, i) => {
       cell.classList.toggle("active", i === index);
@@ -83,18 +85,48 @@ export function initProjects() {
     renderProjectCard(project);
   }
 
+  // The cells advance on their own so the section demos itself, but a click
+  // is the visitor taking over: it stops the cycle for good. Hover and focus
+  // only pause it, so passing the cursor over the strip doesn't kill it.
+  const CYCLE_MS = 3200;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let cycleTimer = null;
+  let stopped = reduceMotion;
+
+  function startCycle() {
+    if (stopped || cycleTimer) return;
+    cycleTimer = setInterval(() => selectProject((current + 1) % PROJECTS.length), CYCLE_MS);
+  }
+  function pauseCycle() {
+    clearInterval(cycleTimer);
+    cycleTimer = null;
+  }
+  function stopCycle() {
+    stopped = true;
+    pauseCycle();
+  }
+
   outputCells.forEach((cell) => {
     const i = Number(cell.dataset.index);
     cell.addEventListener("mouseenter", () => selectProject(i));
-    cell.addEventListener("click", () => selectProject(i));
+    cell.addEventListener("click", () => {
+      stopCycle();
+      selectProject(i);
+    });
     cell.addEventListener("focus", () => selectProject(i));
   });
 
+  outputEl.addEventListener("mouseenter", pauseCycle);
+  outputEl.addEventListener("mouseleave", startCycle);
+  outputEl.addEventListener("focusin", pauseCycle);
+  outputEl.addEventListener("focusout", startCycle);
+
   selectProject(0);
+  startCycle();
 
   replayBtn?.addEventListener("click", () => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
+    pauseCycle();
     let i = 0;
     replayBtn.disabled = true;
     const step = () => {
@@ -106,6 +138,7 @@ export function initProjects() {
         replayBtn.disabled = false;
         const activeIndex = [...outputCells].findIndex((c) => c.classList.contains("active"));
         selectProject(activeIndex >= 0 ? activeIndex : 0);
+        startCycle();
       }
     };
     step();
