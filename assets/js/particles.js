@@ -1,6 +1,6 @@
 import { cssVar, onThemeChange } from "./theme.js";
 
-// Constellation background canvas for the hero section.
+// Constellation background canvas, fixed behind the whole page.
 
 function toRgba(color, alpha) {
   const hex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color.trim());
@@ -37,10 +37,9 @@ export function initParticles(canvasId) {
   });
 
   function resize() {
-    const rect = canvas.parentElement.getBoundingClientRect();
     dpr = Math.min(window.devicePixelRatio || 1, 2);
-    w = rect.width;
-    h = rect.height;
+    w = window.innerWidth;
+    h = window.innerHeight;
     canvas.width = w * dpr;
     canvas.height = h * dpr;
     canvas.style.width = w + "px";

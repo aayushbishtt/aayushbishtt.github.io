@@ -9,22 +9,12 @@ export const SITE = {
   role: "AI Engineer & Data Scientist",
   tagline: "Building agentic AI systems and decoding what makes machine learning trustworthy.",
   email: "aayush.bisht@student-cs.fr",
-  phone: "+33 7 45 39 97 29",
   location: "Paris, France",
   github: "https://github.com/aayushbishtt",
   linkedin: "https://www.linkedin.com/in/aayush-bisht",
   medium: "https://bishtaayush.medium.com/",
-  resume: "Aayush_Bisht_Resume.pdf",
   availability: "Open to AI/ML roles · Research internships",
 };
-
-// Set to a Ready Player Me .glb URL to use a personal avatar. When empty, the
-// bundled demo model (assets/avatar/avatar-demo.glb) is used; if that also
-// fails to load, the hero falls back to a static portrait automatically.
-export const AVATAR_GLB_URL = "";
-export const AVATAR_DEMO_GLB = "assets/avatar/avatar-demo.glb";
-export const AVATAR_IDLE_FBX = "assets/avatar/idle.fbx";
-export const AVATAR_PORTRAIT = "assets/img/portrait.jpg";
 
 export const ABOUT = {
   eyebrow: "About Me",
@@ -32,7 +22,7 @@ export const ABOUT = {
   paragraphs: [
     "I'm Aayush Bisht, an AI Engineer currently interning at <strong>Amadeus</strong> in Sophia Antipolis, building agentic multi-agent systems that generate and verify software documentation automatically.",
     "I'm pursuing an <strong>MSc in Artificial Intelligence at CentraleSupélec, Université Paris-Saclay</strong>, with graduate coursework from <strong>MVA at ENS Paris-Saclay</strong> in reinforcement learning and advanced deep learning.",
-    "Before moving to France I spent five years in industry — OSINT cybersecurity analysis at Cybercell and data engineering at QuantStreet — which is where I learned that models matter less than the pipelines and evidence built around them.",
+    "Before moving to France I spent five years in industry, Cybersecurity Analysis at Cybercell and Data Analyst at QuantStreet, which is where I learned that models matter less than the pipelines and evidence built around them.",
   ],
 };
 
@@ -241,7 +231,7 @@ export const CHAT_KB = {
       id: "education",
       patterns: [/educat/, /school/, /universit/, /degree/, /study|studies|studying/, /centralesupelec|centrale|supelec|saclay|mva|ens/],
       answer:
-        "MSc in Artificial Intelligence at CentraleSupélec, Université Paris-Saclay (Sep 2025 – present), with MVA coursework at ENS Paris-Saclay. He's a France Excellence Charpak Scholar. B.Tech in Information Technology from Graphic Era University, India (2015–2019).",
+        "MSc in Artificial Intelligence at CentraleSupélec, Université Paris-Saclay (Sep 2025 – December 2026), with MVA coursework at ENS Paris-Saclay. B.Tech (Engineering) in Information Technology from Graphic Era University, India (2015–2019).",
       chips: ["experience", "skills", "projects"],
     },
     {
@@ -249,7 +239,7 @@ export const CHAT_KB = {
       patterns: [/project/, /research/, /causal/, /brain/, /pruning/, /hackathon/, /build|built/],
       answer:
         "Highlights: causal discovery research at CEA, RL-based neural network pruning (38.7% parameter reduction), a GRU+GPT-2 text decoder, decoding mouse position from brain signals at Paris Brain Institute, and a 2nd-place hackathon win at Hack'InSaclay for a skin-cell monitoring system. Scroll to the Projects section to explore them all.",
-      chips: ["skills", "resume", "contact"],
+      chips: ["skills", "contact"],
     },
     {
       id: "skills",
@@ -262,21 +252,21 @@ export const CHAT_KB = {
       id: "contact",
       patterns: [/contact/, /email|e-mail/, /reach/, /hire|hiring/, /linkedin/, /phone/, /connect/],
       answer:
-        "Best ways to reach Aayush: email aayush.bisht@student-cs.fr, or connect on LinkedIn / GitHub via the icons in the nav and footer. He typically responds within a couple of days.",
-      chips: ["resume", "projects", "fun fact"],
+        "Best ways to reach Aayush: email aayush.bisht@student-cs.fr, or connect on LinkedIn / GitHub via the icons in the nav and footer. He typically responds within 24hrs.",
+      chips: ["projects", "fun fact"],
     },
     {
       id: "resume",
       patterns: [/resume|résumé|cv/, /download/],
       answer:
-        "You can download his full résumé using the Resume button in the navigation bar or the footer.",
+        "His résumé isn't posted publicly — email aayush.bisht@student-cs.fr and he'll send it over.",
       chips: ["experience", "contact"],
     },
     {
       id: "fun fact",
       patterns: [/fun fact/, /hobby|hobbies/, /interesting/, /surprise/],
       answer:
-        "Fun fact: Aayush worked in cybersecurity OSINT investigations before pivoting into AI — so he still reflexively checks where a dataset actually came from before trusting a model's output.",
+        "Fun fact: Aayush worked in cybersecurity OSINT investigations before pivoting into AI; so he still reflexively checks where a dataset actually came from before trusting a model's output.",
       chips: ["projects", "experience", "contact"],
     },
   ],

@@ -70,6 +70,8 @@
 </head>
 <body>
 
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
 <!-- ==================== Preloader ==================== -->
 <div id="preloader" aria-hidden="true">
   <canvas id="preloader-canvas" width="360" height="220"></canvas>
@@ -91,7 +93,6 @@
         <i class="fas fa-moon icon-light" aria-hidden="true"></i>
         <i class="fas fa-sun icon-dark" aria-hidden="true"></i>
       </button>
-      <a href="Aayush_Bisht_Resume.pdf" class="btn-pill-nav" download>Resume</a>
       <a href="#contact" class="btn btn-primary" style="padding:9px 20px;">Hire Me</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
     </div>
@@ -103,7 +104,6 @@
 
 <!-- ==================== Hero ==================== -->
 <section class="hero" id="hero">
-  <canvas id="particles-canvas"></canvas>
   <div class="container hero-inner">
     <div class="hero-side left reveal">
       <span class="hero-availability"><span class="availability-pulse"></span>Open to permanent roles</span>
@@ -116,14 +116,9 @@
       </div>
     </div>
 
-    <div class="avatar-stage reveal">
-      <div class="avatar-glow" aria-hidden="true"></div>
-      <div id="avatar-mount" style="position:relative;width:100%;height:100%;z-index:1;"></div>
-    </div>
-
     <div class="hero-side right reveal">
       <span class="hero-eyebrow">I work as an</span>
-      <h1 class="hero-name hero-role-primary">AI/ML <span class="accent">Engineer</span></h1>
+      <h1 class="hero-name">AI/ML <span class="accent">Engineer</span></h1>
       <div class="hero-role-secondary">AI/MLOps</div>
       <span class="hero-underline"></span>
       <p style="color:var(--muted); max-width: 300px; margin-top: 14px; font-size: 14px;">
@@ -140,7 +135,6 @@
   <a href="https://bishtaayush.medium.com/" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium"></i></a>
   <a href="mailto:aayush.bisht@student-cs.fr" aria-label="Email"><i class="fas fa-envelope"></i></a>
 </aside>
-<a href="Aayush_Bisht_Resume.pdf" download class="btn btn-outline resume-fab">Resume</a>
 
 <!-- ==================== Availability ==================== -->
 <section class="availability" id="availability">
@@ -233,7 +227,7 @@
   <div class="container section-inner">
     <div class="section-head reveal" style="max-width:760px;">
       <div class="eyebrow">Live Demo</div>
-      <h2 class="section-title">GoEmotions <span style="color:var(--accent)">Classifier</span><span class="emo-badge">MiniLMv2 · 28 emotions · runs in your browser</span></h2>
+      <h2 class="section-title">GoSentiment <span style="color:var(--accent)">Analysis</span><span class="emo-badge">MiniLMv2 · 28 emotions · runs in your browser</span></h2>
       <p class="section-hint">Multi-label emotion classification over the GoEmotions taxonomy. Type a sentence and the model scores all 28 emotions — no server, no API key: the weights download once and inference runs entirely on your own device.</p>
       <div class="emo-model-status" id="emo-status"><span class="emo-status-dot"></span><span id="emo-status-text">Model loads on first run (~32 MB, cached afterwards)</span></div>
     </div>
@@ -281,9 +275,8 @@
       <a href="mailto:aayush.bisht@student-cs.fr" class="btn btn-primary">Say Hello ↗</a>
       <a href="https://github.com/aayushbishtt" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i>&nbsp; GitHub</a>
       <a href="https://www.linkedin.com/in/aayush-bisht" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-linkedin"></i>&nbsp; LinkedIn</a>
-      <a href="Aayush_Bisht_Resume.pdf" download class="btn btn-outline">Resume</a>
     </div>
-    <p class="contact-meta">aayush.bisht@student-cs.fr &nbsp;·&nbsp; +33 7 45 39 97 29</p>
+    <p class="contact-meta">aayush.bisht@student-cs.fr</p>
   </div>
 </section>
 

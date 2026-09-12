@@ -2,7 +2,6 @@ import { NAV_LINKS, ABOUT } from "./data.js";
 import { initTheme } from "./theme.js";
 import { runPreloader } from "./preloader.js";
 import { initParticles } from "./particles.js";
-import { initAvatar } from "./avatar.js";
 import { initJourney } from "./journey.js";
 import { initProjects } from "./projects.js";
 import { initSkills } from "./skills.js";
@@ -72,13 +71,11 @@ function renderNav() {
   toggle?.addEventListener("click", () => {
     const open = nav.classList.toggle("open");
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    document.body.classList.toggle("mobile-menu-open", open);
   });
   mobileMenu?.querySelectorAll("a").forEach((a) =>
     a.addEventListener("click", () => {
       nav.classList.remove("open");
       toggle?.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("mobile-menu-open");
     })
   );
 }
@@ -110,27 +107,6 @@ function initReveal() {
   els.forEach((el) => observer.observe(el));
 }
 
-// The social rail and résumé FAB are fixed at the left edge for the whole
-// page; anywhere content also starts near that edge (every section, once
-// centered container padding is accounted for) they'd sit on top of it. Only
-// show them while the hero is in view.
-function initSideRailVisibility() {
-  const hero = document.getElementById("hero");
-  const rail = document.querySelector(".social-rail");
-  const fab = document.querySelector(".resume-fab");
-  if (!hero || !("IntersectionObserver" in window)) return;
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        rail?.classList.toggle("hidden", !entry.isIntersecting);
-        fab?.classList.toggle("hidden", !entry.isIntersecting);
-      });
-    },
-    { threshold: 0.05 }
-  );
-  observer.observe(hero);
-}
-
 function initNavShadow() {
   const nav = document.getElementById("site-nav");
   if (!nav) return;
@@ -144,7 +120,6 @@ async function boot() {
   renderNav();
   renderAbout();
   initNavShadow();
-  initSideRailVisibility();
   initParticles("particles-canvas");
   initJourney();
   initProjects();
@@ -152,7 +127,6 @@ async function boot() {
   initChat();
   initEmotions();
   initReveal();
-  initAvatar("avatar-mount");
 
   await runPreloader();
 }
