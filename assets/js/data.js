@@ -90,7 +90,7 @@ export const JOURNEY = [
       "Coursework: Machine Learning, Deep Learning, Optimization, NLP, Decision Modeling, AI for Finance, Medical Imaging (Computer Vision), Multi-Agent Systems.",
       "MVA, ENS Paris-Saclay: Reinforcement Learning, Graphs in Machine Learning, Advanced Deep Learning.",
     ],
-    log: "[epoch 4] dataset: CentraleSupélec (M2 AI) + MVA/ENS — checkpoint: Charpak Scholarship awarded.",
+    log: "[epoch 4] dataset: MSc AI, CentraleSupélec, University Paris-Saclay checkpoint",
   },
   {
     epoch: 5,
@@ -234,7 +234,7 @@ export const CHAT_KB = {
       id: "experience",
       patterns: [/experience/, /work(ed)?/, /job/, /career/, /amadeus/, /cybercell/, /quantstreet/],
       answer:
-        "Aayush is currently an AI Engineer Intern at Amadeus (Sophia Antipolis), building agentic multi-agent systems that generate and verify repo documentation — cutting cost per repo from $8 to $2. Before that: OSINT cybersecurity analyst at Cybercell, and data analyst at QuantStreet LLP.",
+        "Aayush is currently an AI Engineer Intern at Amadeus (Sophia Antipolis), building agentic multi-agent systems that generate and verify repo documentation — cutting cost per repo from $8 to $2. Before that: Cybersecurity Analyst at Cybercell, and Data Analyst at QuantStreet LLP.",
       chips: ["education", "projects", "contact"],
     },
     {
