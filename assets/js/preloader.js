@@ -35,8 +35,12 @@ function buildLayout(w, h) {
 // renders soft and blurry on any HiDPI display.
 function scaleForDpr(canvas, ctx) {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  const cssW = canvas.width;
-  const cssH = canvas.height;
+  // The width/height attributes are the design size, not a promise that the
+  // viewport can fit them. On a 360px phone the authored 360px canvas runs
+  // edge to edge; only body { overflow-x: hidden } was hiding the spill.
+  const aspect = canvas.height / canvas.width;
+  const cssW = Math.max(200, Math.min(canvas.width, window.innerWidth - 48));
+  const cssH = Math.round(cssW * aspect);
   canvas.style.width = cssW + "px";
   canvas.style.height = cssH + "px";
   canvas.width = Math.round(cssW * dpr);
@@ -120,6 +124,9 @@ export function runPreloader() {
     document.body.style.overflow = "hidden";
 
     if (alreadyShown || REDUCE_MOTION) {
+      // Nothing is drawn on this path, so the canvas would otherwise hold
+      // open a blank 360x220 box above the readout.
+      canvas.style.display = "none";
       pctEl.textContent = "100";
       statusEl.textContent = "Ready.";
       setTimeout(finish, alreadyShown ? 120 : DURATION_MS);

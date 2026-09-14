@@ -2,6 +2,7 @@ import { NAV_LINKS, ABOUT } from "./data.js";
 import { initTheme } from "./theme.js";
 import { runPreloader } from "./preloader.js";
 import { initParticles } from "./particles.js";
+import { initCursor } from "./cursor.js";
 import { initJourney } from "./journey.js";
 import { initProjects } from "./projects.js";
 import { initSkills } from "./skills.js";
@@ -121,6 +122,7 @@ async function boot() {
   renderAbout();
   initNavShadow();
   initParticles("particles-canvas");
+  initCursor();
   initJourney();
   initProjects();
   initSkills("skills-stage", "skills-legend");

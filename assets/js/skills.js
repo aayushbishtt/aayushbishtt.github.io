@@ -41,7 +41,10 @@ export function initSkills(stageId, legendId) {
   const width = stage.clientWidth;
   const height = stage.clientHeight;
 
-  const engine = Engine.create();
+  // Above the solver defaults (6/4): on a narrow stage the bubbles pile several
+  // deep, and the weight pushed the outer ones a visible ~10px into the side
+  // walls, where overflow:hidden shaved their edges off.
+  const engine = Engine.create({ positionIterations: 12, velocityIterations: 8 });
   engine.gravity.y = 0.5;
   const world = engine.world;
 
@@ -55,9 +58,21 @@ export function initSkills(stageId, legendId) {
     Bodies.rectangle(width + 20, height / 2, 40, height * 4, wallOpts),
   ]);
 
+  // The bubble sizes below are tuned for a full-width desktop stage. Dropped
+  // unchanged into a ~342px phone stage, 26 of them need more area than the
+  // stage has: the surplus stacks up past the (deliberately absent) ceiling
+  // and overflow:hidden clips it, so roughly a third of the skills were
+  // simply never visible. Scale the radii with the stage's actual width.
+  const sizeScale = Math.max(0.6, Math.min(1, width / 560));
+
   const bubbleData = SKILLS.map((s, i) => {
-    const radius = Math.max(34, Math.min(64, 24 + s.name.length * 3));
-    const x = 40 + Math.random() * (width - 80);
+    const radius = Math.round(
+      Math.max(34, Math.min(64, 24 + s.name.length * 3)) * sizeScale
+    );
+    // Spawn inset by the bubble's own radius: a fixed 40px inset let the
+    // larger bubbles start already overlapping a side wall, and Matter never
+    // fully resolved the penetration once the pile settled on top of them.
+    const x = radius + Math.random() * Math.max(1, width - radius * 2);
     // Spawn already within (or just barely above) the stage so bubbles are
     // visible immediately — the simulation only advances while this section
     // is on-screen, so a large drop from far above can take a long time to
@@ -81,7 +96,7 @@ export function initSkills(stageId, legendId) {
     el.style.width = `${radius * 2}px`;
     el.style.height = `${radius * 2}px`;
     el.style.background = color;
-    el.style.fontSize = radius < 40 ? "10px" : "12px";
+    el.style.fontSize = radius < 40 * sizeScale ? "10px" : "12px";
     stage.appendChild(el);
     return el;
   });

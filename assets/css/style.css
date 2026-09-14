@@ -258,7 +258,82 @@ img { max-width: 100%; display: block; }
   position: relative; min-height: 100vh; display: flex; align-items: center;
   padding-top: var(--nav-h); overflow: hidden;
 }
-#particles-canvas { position: fixed; inset: 0; z-index: 0; opacity: 0.55; pointer-events: none; }
+/* The field is drawn at near-full strength: the alpha ramp lives in
+   particles.js so the nodes stay crisp, and this only takes the whole
+   layer back far enough to keep body copy comfortable over it. The light
+   theme needs a little more restraint — a dark stroke on an off-white
+   ground carries further than a mint one on near-black. */
+#particles-canvas { position: fixed; inset: 0; z-index: 0; opacity: 0.9; pointer-events: none; }
+
+/* ==========================================================================
+   Custom cursor
+   --------------------------------------------------------------------------
+   Only active once cursor.js has confirmed a fine pointer and added
+   `.has-custom-cursor` — without that class every rule here is inert and the
+   native cursor is untouched, which is what keeps touch and keyboard users
+   out of it.
+   ========================================================================== */
+/* The halo is its own token rather than reusing --accent-glow: that one is
+   tuned for large soft washes behind sections, and at 66px across it barely
+   registers. */
+:root { --cursor-fill: #f7f2e9; --cursor-glow: rgba(74, 222, 159, 0.5); }
+[data-theme="light"] { --cursor-fill: #ffffff; --cursor-glow: rgba(15, 155, 100, 0.42); }
+
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button,
+.has-custom-cursor summary,
+.has-custom-cursor [role="button"] { cursor: none; }
+/* Text entry keeps its native caret: a beam is load-bearing information
+   about where typing will land, not decoration to be replaced. */
+.has-custom-cursor input,
+.has-custom-cursor textarea,
+.has-custom-cursor select,
+.has-custom-cursor [contenteditable="true"] { cursor: auto; }
+/* Inside an iframe the page gets no pointer events, so the drawn cursor
+   would freeze at the border — hand those regions back to the OS. */
+.has-custom-cursor iframe { cursor: auto; }
+
+.cursor { position: fixed; inset: 0; z-index: 9000; pointer-events: none; opacity: 0; transition: opacity 0.25s ease; }
+.cursor.is-visible { opacity: 1; }
+.cursor.is-text { opacity: 0; }
+
+.cursor-arrow, .cursor-glow {
+  position: absolute; top: 0; left: 0; will-change: transform;
+}
+.cursor-arrow {
+  /* The path is drawn with its tip at (2, 1.6), so pull the sprite up and
+     left by that much to put the tip exactly on the pointer coordinate. */
+  margin: -1.6px 0 0 -2px;
+  fill: var(--cursor-fill);
+  stroke: var(--accent);
+  stroke-width: 1.6px;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px var(--cursor-glow)) drop-shadow(0 0 12px var(--cursor-glow));
+  /* Colour may ease; position may not. Transitioning transform here would
+     put the arrow ~120ms behind the hand, which reads as lag rather than
+     polish — the trailing is the glow's job. */
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+.cursor-glow {
+  width: 66px; height: 66px; margin: -25px 0 0 -25px; border-radius: 50%;
+  background: radial-gradient(circle, var(--cursor-glow) 0%, transparent 65%);
+  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hover swells the glow and fills the arrow with the accent — the same
+   signal the underlying element's own hover state gives, so the cursor
+   confirms rather than announces. */
+.cursor.is-hover .cursor-glow { width: 104px; height: 104px; margin: -44px 0 0 -44px; }
+.cursor.is-hover .cursor-arrow { fill: var(--accent); stroke: var(--cursor-fill); }
+.cursor.is-down .cursor-glow { width: 52px; height: 52px; margin: -18px 0 0 -18px; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Keep the cursor, drop the easing — the glow still renders, it just stops
+     trailing and resizing. */
+  .cursor-arrow, .cursor-glow { transition: none; }
+}
+[data-theme="light"] #particles-canvas { opacity: 0.7; }
 .hero-inner {
   position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr;
   align-items: start; gap: 24px; width: 100%; max-width: 1040px;
@@ -287,7 +362,6 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; text-align: center; }
   .hero-side.left, .hero-side.right { align-items: center; text-align: center; }
-  .hero-availability { position: static; margin-bottom: 6px; }
   .hero-side.right .hero-underline { align-self: center; }
   .hero-side.right .hero-cta { justify-content: center; }
   .hero { min-height: auto; padding-block: calc(var(--nav-h) + 24px) 72px; }
@@ -532,6 +606,21 @@ footer.site-footer strong { color: var(--text); }
   white-space: nowrap;
 }
 
+/* Must come after the rule above, not before it: both selectors are a single
+   class, so a @media block earlier in the file loses on source order and the
+   chip stayed absolutely positioned on phones — where it sat above the hero
+   text and was clipped by the fixed nav. */
+@media (max-width: 900px) {
+  .hero-availability {
+    position: static;
+    margin-bottom: 10px;
+    align-self: center;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 /* ==========================================================================
    Hero role stack (AI/ML Engineer · AI/MLOps)
    ========================================================================== */
@@ -613,3 +702,69 @@ footer.site-footer strong { color: var(--text); }
 .emo-bar-track { height: 9px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
 .emo-bar-fill { height: 100%; border-radius: 999px; width: 0; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
 .emo-pct { font-size: 12.5px; font-weight: 700; text-align: right; font-family: "SFMono-Regular", Menlo, monospace; }
+
+/* ==========================================================================
+   Mobile pass
+   --------------------------------------------------------------------------
+   Everything above this point sizes for the desktop layout; the media queries
+   there only ever collapse grid columns. On a phone that left desktop-scale
+   section padding, desktop-scale card padding, and a fixed chat launcher wide
+   enough to sit on top of the footer. This block is the actual small-screen
+   pass, and it is last in the file so its overrides win on source order.
+   ========================================================================== */
+@media (max-width: 700px) {
+  /* 120px/140px of vertical padding is over a third of a phone screen — it
+     read as the page being broken rather than as breathing room. */
+  .section { padding-block: 64px; }
+  .contact-section { padding-block: 72px; }
+  .section-head { margin-bottom: 36px; }
+
+  .section-title { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+  .contact-heading { font-size: clamp(1.9rem, 8.5vw, 2.6rem); }
+  .outline-heading { font-size: clamp(2.6rem, 14vw, 4rem); }
+
+  /* The container's 24px gutter plus 32px of card padding squeezed body copy
+     into ~250px of a 390px screen. */
+  .container { padding-inline: 18px; }
+  .journey-card,
+  .project-card,
+  .conv-wrap { padding: 20px; }
+  .loss-chart-wrap,
+  .emo-results { padding: 16px; }
+  .emo-input-wrap { padding: 14px; }
+  .journey-card { min-height: 0; }
+  .emo-results { min-height: 180px; }
+
+  /* The label/bar/percent grid left barely any room for the bar itself. */
+  .emo-bar-row { grid-template-columns: 86px 1fr 40px; gap: 8px; }
+
+  /* Sat inline inside the <h2>; as its own block it stops fighting the
+     heading for the line. */
+  .emo-badge { display: flex; margin-left: 0; margin-top: 12px; white-space: normal; }
+
+  /* A 169px-wide pill fixed to the bottom-right covered the footer text and
+     the availability tags. Icon-only on phones. */
+  .chat-launcher {
+    right: 14px; bottom: 14px;
+    width: 52px; height: 52px; padding: 0;
+    justify-content: center; gap: 0;
+    font-size: 19px;
+  }
+  .chat-launcher .chat-launcher-label { display: none; }
+
+  /* Reserve the launcher's corner so nothing ever sits underneath it. */
+  footer.site-footer { padding-bottom: 84px; }
+}
+
+@media (max-width: 480px) {
+  /* `vh` on mobile resolves against the viewport with the URL bar hidden, so
+     a vh-based max-height can overflow what is actually on screen. `dvh`
+     tracks the visible viewport; the vh line above stays as the fallback. */
+  .chat-panel { bottom: 78px; max-height: calc(100dvh - 140px); height: 460px; }
+}
+
+@media (max-width: 700px) {
+  /* Keep the full 480px: the bubbles need the headroom to settle without the
+     top of the pile being clipped away. */
+  .skills-legend { gap: 10px 16px; }
+}
